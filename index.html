@@ -1,15 +1,17 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Family Office | Investment Policy Studio</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f5f3ed;color:#17312d;font:16px/1.5 system-ui,sans-serif}header{background:#132f2a;color:#fff;padding:38px max(5vw,20px)}small,.eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:.73rem;font-weight:700}.eyebrow{color:#e1c78e}h1,h2,h3{font-family:Georgia,serif;line-height:1.15}h1{font-size:clamp(2rem,5vw,3.6rem);margin:.3em 0}header p{max-width:720px;color:#d8e3dd}main{max-width:1200px;margin:auto;padding:24px;display:grid;grid-template-columns:minmax(0,2fr) minmax(265px,1fr);gap:20px}section,aside{background:white;border:1px solid #dbdfd5;border-radius:14px;padding:22px;min-width:0}section{margin-bottom:16px}aside{align-self:start;position:sticky;top:16px}h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}label{display:block;font-weight:600;font-size:.9rem}input,textarea{display:block;width:100%;padding:8px;border:1px solid #899b91;border-radius:6px;background:#fcfdfa;color:inherit;font:inherit}textarea{min-height:75px}button{padding:10px 14px;border:1px solid #315c50;border-radius:7px;background:#fff;color:#17312d;font:inherit;cursor:pointer}button.primary{background:#245347;color:white}button:disabled{opacity:.5;cursor:default}.actions{display:flex;flex-wrap:wrap;gap:8px}table{width:100%;border-collapse:collapse;font-size:.85rem}th,td{padding:5px;text-align:left;border-bottom:1px solid #e4e7df}td input{min-width:58px}output{display:block;font-size:1.5rem;font-weight:700}.bad{color:#922d24}.good{color:#205b43}.muted{color:#4b6259}.scroll{overflow:auto}textarea{max-width:100%}#calls-error{margin:4px 0 0;font-size:.875rem}#paper{display:none}#bar{display:flex;height:13px;border-radius:8px;overflow:hidden;background:#edf1eb}#checks{padding-left:20px}footer{max-width:1200px;margin:auto;padding:0 24px 24px}a{color:#245347}@media(max-width:760px){main{grid-template-columns:minmax(0,1fr)}aside{position:static}.grid{grid-template-columns:minmax(0,1fr)}}@media print{body{background:white;color:black}header,main,footer{display:none}#paper{display:block}#paper h2{break-after:avoid}#paper p{white-space:pre-wrap}#paper table{break-inside:avoid}}
+*{box-sizing:border-box}body{margin:0;background:#f5f3ed;color:#17312d;font:16px/1.5 system-ui,sans-serif}header{background:#132f2a;color:#fff;padding:38px max(5vw,20px)}small,.eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:.73rem;font-weight:700}.eyebrow{color:#e1c78e}h1,h2,h3{font-family:Georgia,serif;line-height:1.15}h1{font-size:clamp(2rem,5vw,3.6rem);margin:.3em 0}header p{max-width:720px;color:#d8e3dd}main{max-width:1200px;margin:auto;padding:24px;display:grid;grid-template-columns:minmax(0,2fr) minmax(265px,1fr);gap:20px}section,aside{background:white;border:1px solid #dbdfd5;border-radius:14px;padding:22px;min-width:0}section{margin-bottom:16px}aside{align-self:start;position:sticky;top:16px}h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}label{display:block;font-weight:600;font-size:.9rem}input,textarea{display:block;width:100%;padding:8px;border:1px solid #899b91;border-radius:6px;background:#fcfdfa;color:inherit;font:inherit}textarea{min-height:75px}button{padding:10px 14px;border:1px solid #315c50;border-radius:7px;background:#fff;color:#17312d;font:inherit;cursor:pointer}button.primary{background:#245347;color:white}button:disabled{opacity:.5;cursor:default}.actions{display:flex;flex-wrap:wrap;gap:8px}table{width:100%;border-collapse:collapse;font-size:.85rem}th,td{padding:5px;text-align:left;border-bottom:1px solid #e4e7df}td input{min-width:58px}output{display:block;font-size:1.5rem;font-weight:700}.bad{color:#922d24}.good{color:#205b43}.muted{color:#4b6259}.scroll{overflow:auto}textarea{max-width:100%}#calls-error{margin:4px 0 0;font-size:.875rem}#bar{display:flex;height:13px;border-radius:8px;overflow:hidden;background:#edf1eb}#checks{padding-left:20px}footer{max-width:1200px;margin:auto;padding:0 24px 24px}a{color:#245347}@media(max-width:760px){main{grid-template-columns:minmax(0,1fr)}aside{position:static}.grid{grid-template-columns:minmax(0,1fr)}}
 </style>
-<header><div class="eyebrow">Single Family Office · Interactive prototype</div><h1>Investment Policy Studio</h1><p>Set the mandate, test allocation and liquidity rules, then print a draft for committee review.</p><div class="actions"><button type="button" id="sample">Load fictional example</button><button type="button" id="clear">Clear draft</button><button id="print-top" type="button" disabled>Print draft</button></div></header>
+<header><div class="eyebrow">Single Family Office · Interactive prototype</div><h1>Investment Policy Studio</h1><p>Set the mandate, test allocation and liquidity rules, then download a draft PDF for committee review.</p><div class="actions"><button type="button" id="sample">Load fictional example</button><button type="button" id="clear">Clear draft</button><button id="download-top" type="button" disabled>Download IPS PDF</button></div></header>
 <main><form id="editor">
 <section><small>01 / Mandate</small><h2>Define the portfolio</h2><div id="mandate" class="grid"></div></section>
-<section><small>02 / Liquidity</small><h2>Plan the next 12 months</h2><div id="liquidity" class="grid"></div><p class="muted">Enter unencumbered cash available for near-term obligations. Count expected capital calls due within 12 months and avoid double-counting them in other outflows.</p></section>
+<section><small>02 / Liquidity</small><h2>Plan the next 12 months</h2><div id="liquidity" class="grid"></div><p class="muted">Enter unencumbered cash available for these obligations. This dollar amount is entered separately from the portfolio cash weight. Count expected capital calls due within 12 months and avoid double-counting them in other outflows.</p></section>
 <section><small>03 / Portfolio rules</small><h2>Set allocation bands</h2><p class="muted">Enter minimum, target, maximum and current weights as percentages of the same portfolio. A breach flags a review. The committee considers taxes, trading costs and liquidity before approving a trade.</p><div class="scroll"><table><thead><tr><th>Asset class</th><th>Min %</th><th>Target %</th><th>Max %</th><th>Current %</th><th>Band check</th></tr></thead><tbody id="alloc"></tbody></table></div></section>
 <section><small>04 / Oversight</small><h2>Assign responsibilities</h2><div id="governance" class="grid"></div></section></form>
-<aside><small>Live policy review</small><h2>Draft checks</h2><p>Target allocation <output id="total">—</output></p><div id="bar" aria-hidden="true"></div><h3>Allocation breaches</h3><ul id="breaches" aria-live="polite"></ul><h3>12-month liquidity</h3><p>Liquidity coverage <output id="cover">—</output><span id="gap" class="muted"></span></p><ul id="checks" aria-live="polite"></ul><div class="actions"><button id="print" class="primary" type="button">Print / save PDF</button></div><p class="muted">Inputs stay in this tab and reset on reload. Use fictional data for the demo. Exported policies are drafts for review.</p></aside></main>
-<footer><a href="https://rpc.cfainstitute.org/policy/positions/elements-of-an-investment-policy-statement-for-individual-investors">Policy structure reference · CFA Institute</a></footer><article id="paper"></article>
+<aside><small>Live policy review</small><h2>Draft checks</h2><p>Target allocation <output id="total">—</output></p><div id="bar" aria-hidden="true"></div><h3>Allocation breaches</h3><ul id="breaches" aria-live="polite"></ul><h3>12-month liquidity</h3><p>Liquidity coverage <output id="cover">—</output><span id="gap" class="muted"></span></p><ul id="checks" aria-live="polite"></ul><div class="actions"><button id="download" class="primary" type="button" disabled>Download IPS PDF</button></div><p id="download-error" class="bad" role="alert" hidden></p><p class="muted">Inputs stay in this tab and reset on reload. Use fictional data for the demo. Exported policies are drafts for review.</p></aside></main>
+<footer><a href="https://rpc.cfainstitute.org/policy/positions/elements-of-an-investment-policy-statement-for-individual-investors">Policy structure reference · CFA Institute</a></footer>
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="ips-pdf.js"></script>
 <script>
 const by=id=>document.getElementById(id);
 const groups={
@@ -66,14 +68,67 @@ function update(){
  }).length;
  const checks=[[!missing,missing?missing+(missing===1?' policy field':' policy fields')+' to complete':'Policy fields complete'],[bandValid,bandValid?'Allocation bands valid':'Enter all weights and check min ≤ target ≤ max'],[complete&&totals.every(is100),complete&&totals.every(is100)?'Target and current weights total 100%':'Target and current weights must each total 100%'],[funded&&gap>=0,!funded?'Liquidity inputs pending':gap>=0?'Reserves cover planned outflows':'Review projected liquidity shortfall']];
  by('checks').replaceChildren(...checks.map(([ok,text])=>{const li=document.createElement('li');li.className=ok?'good':'bad';li.textContent=text;return li}));
- const printDisabled=!!missing||!bandValid||!totals.every(is100)||!funded;
- by('print').disabled=by('print-top').disabled=printDisabled;
+ const downloadDisabled=!!missing||!bandValid||!totals.every(is100)||!funded;
+ by('download').disabled=by('download-top').disabled=downloadDisabled;
  snapshot={rows,need,checks,breaches};
 }
 by('editor').addEventListener('input',update);
 by('editor').addEventListener('submit',e=>e.preventDefault());
 by('sample').onclick=()=>{if(Object.values(groups).flat().some(([id])=>val(id))&&!confirm('Replace this draft with the fictional example?'))return;for(const [id,value] of Object.entries(example))by(id).value=value;weights.forEach((row,i)=>row.forEach((x,j)=>by('a'+i+j).value=x));update()};
 by('clear').onclick=()=>{if(confirm('Clear all draft inputs?')){by('editor').reset();update()}};
-by('print-top').onclick=by('print').onclick=()=>{update();if(by('print').disabled)return;const paper=by('paper');paper.replaceChildren();const add=(tag,text)=>{const e=document.createElement(tag);e.textContent=text;paper.append(e)};add('h1','Investment Policy Statement');add('p',val('family')+' · Draft for committee review');for(const [group,fields] of Object.entries(groups)){add('h2',({mandate:'Mandate and constraints',liquidity:'12-month liquidity plan',governance:'Governance and review'})[group]);for(const [id,label,type] of fields)add('p',label+'\n'+(type==='num'?money(+val(id)):val(id)));if(group==='liquidity')add('p','Planned outflows: '+money(snapshot.need)+' | '+by('gap').textContent)}add('h2','Strategic allocation and rebalancing');const table=by('alloc').closest('table').cloneNode(true);table.querySelectorAll('input').forEach((input,i)=>input.replaceWith(snapshot.rows[Math.floor(i/4)][i%4]+'%'));table.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));paper.append(table);add('p','Review any band breach before trading. Consider taxes, trading costs and liquidity. Follow the escalation process above.');add('h2','Allocation breaches');add('p',snapshot.breaches.join('\n')||'No allocation breaches detected.');add('h2','Committee review');add('p',snapshot.checks.filter(([ok])=>!ok).map(([,text])=>text).join('\n')||'No additional exceptions flagged by the draft checks.');add('p','Approved by: ____________________   Date: ____________________');window.print()};
+const sectionTitles = {
+ mandate: 'Mandate and constraints',
+ liquidity: '12-month liquidity plan',
+ governance: 'Governance and review'
+};
+const allocationHeaders = ['Asset class', 'Min %', 'Target %', 'Max %', 'Current %', 'Band check'];
+
+async function downloadDraft() {
+ update();
+ if (by('download').disabled) return;
+
+ const error = by('download-error');
+ error.hidden = true;
+ const sections = Object.entries(groups).map(([group, fields]) => ({
+  title: sectionTitles[group],
+  columns: group === 'liquidity' ? 2 : 1,
+  fields: fields.map(([id, label, type]) => ({
+   label,
+   value: type === 'num' ? money(+val(id)) : val(id)
+  }))
+ }));
+ const liquidityResult = by('gap').textContent;
+ sections[1].fields.push(
+  {label: 'Planned outflows', value: money(snapshot.need)},
+  {label: 'Reserve position', value: liquidityResult}
+ );
+
+ const allocationFindings = snapshot.breaches.join('\n') || 'No allocation breaches detected.';
+ try {
+  await IPSPdf.download({
+   family: val('family'),
+   summary: [
+    {label: 'Projected liquidity', value: liquidityResult + (snapshot.need ? ' (' + by('cover').textContent + ' coverage)' : '')},
+    {label: 'Current allocation breaches', value: allocationFindings}
+   ],
+   sections,
+   allocation: {
+    headers: allocationHeaders,
+    rows: snapshot.rows.map((row, i) => [
+     assets[i], ...row.map(weight => weight + '%'), by('flag' + i).textContent
+    ])
+   },
+   allocationNote: 'Review breaches before trading. Consider taxes, trading costs and liquidity, and follow the escalation process above.',
+   breaches: snapshot.breaches,
+   review: snapshot.checks.filter(([ok]) => !ok).map(([, message]) => message)
+  });
+ } catch (failure) {
+  console.error('IPS PDF download failed', failure);
+  error.textContent = 'The PDF could not be downloaded. Please try again.';
+  error.hidden = false;
+  error.scrollIntoView({block: 'nearest'});
+ }
+}
+by('download-top').onclick = by('download').onclick = downloadDraft;
 update();
 </script></html>
